@@ -1,0 +1,77 @@
+/* global.css — F1 Predictor: dark, cinematic racing aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg:        #080a0d;
+  --bg2:       #0f1318;
+  --bg3:       #161c23;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.14);
+  --red:       #e8001d;
+  --red2:      #ff3352;
+  --gold:      #ffd600;
+  --silver:    #a8b8c8;
+  --text:      #e8edf2;
+  --muted:     #5a6675;
+  --font-head: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+
+/* Utility classes */
+.mono { font-family: var(--font-mono); }
+.uppercase { text-transform: uppercase; letter-spacing: 0.12em; }
+.red { color: var(--red2); }
+.gold { color: var(--gold); }
+.muted { color: var(--muted); }
+
+button {
+  font-family: var(--font-head);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+select, input {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+/* Card base */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+/* Red accent bar (used on section titles) */
+.section-label {
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--red2);
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--red);
+  margin-bottom: 0.75rem;
+}

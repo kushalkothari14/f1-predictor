@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+.env
+*.egg-info/
+
+# FastF1 cache & models (large binary files)
+backend/data/f1_cache/
+backend/models/*.pkl
+
+# Node
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+
+# Docker
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store

@@ -1,0 +1,268 @@
+/* Dashboard.module.css */
+
+.page {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.logoBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.logoF1 {
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.3rem;
+  padding: 0.1em 0.4em;
+  letter-spacing: 0.05em;
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+}
+
+.logoText {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.navBtn {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35em 0.75em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.navBtn:hover { color: var(--text); border-color: var(--border2); }
+
+.navActive {
+  composes: navBtn;
+  color: var(--red2);
+  border-color: var(--red);
+}
+
+.modelPill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding: 0.35em 0.8em;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.modelPill[data-ready="true"] { color: #4cde8c; border-color: rgba(76,222,140,0.3); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); }
+.modelPill[data-ready="true"] .dot { background: #4cde8c; box-shadow: 0 0 6px #4cde8c; }
+
+/* ── Event banner ── */
+.eventBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.countryLabel {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red2);
+  margin-bottom: 0.25rem;
+}
+
+.eventName {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.aucs {
+  display: flex;
+  gap: 2rem;
+}
+
+.aucItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+}
+
+.aucItem span:first-child {
+  font-size: 1.6rem;
+  font-family: var(--font-mono);
+  color: var(--gold);
+  line-height: 1;
+}
+
+.aucLabel {
+  font-size: 0.65rem;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── State boxes ── */
+.stateBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5rem 0;
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border2);
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(232,0,29,0.08);
+  border: 1px solid rgba(232,0,29,0.25);
+  border-radius: 4px;
+  margin: 2rem 0;
+  color: var(--red2);
+  font-size: 0.9rem;
+}
+
+.errorIcon { font-size: 1.2rem; }
+
+/* ── Podium ── */
+.podiumSection { padding: 2.5rem 0 0; }
+
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0 2rem;
+}
+
+/* ── Bottom grid ── */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .bottomGrid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.rightCol { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* ── Probability list ── */
+.probList { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.5rem; }
+
+/* ── Table ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: rgba(255,255,255,0.025); }
+
+.rankCell {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  font-family: var(--font-head);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
