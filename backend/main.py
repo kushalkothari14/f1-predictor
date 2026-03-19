@@ -23,8 +23,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["f1-predictor-dusky.vercel.app",
-    "http://localhost:3000"],   
+    allow_origins=[
+        "https://f1-predictor-dusky.vercel.app",
+        "http://localhost:3000",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
